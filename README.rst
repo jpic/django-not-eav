@@ -25,9 +25,17 @@ The advantage of this pattern over classic eav `heavy solutions
 dynamic fields can be treated like regular fields.
 
 The inconvenient is that it gives the website administrator the opportunity to
-mess up with his database - althought django-not-eav tries to prevent that. On
-the other hand, it is great if you're trying to market users of products like
-FileMaker.
+mess up with his database.
+
+In the end, this app enables the website administrator to become the developer
+of his own application.
+
+This app will be the base requirement for the 3 upcomming apps, enabling the
+website administrator to:
+
+- create his forms,
+- create his list views,
+- create his details views,
 
 Requirements
 ------------
