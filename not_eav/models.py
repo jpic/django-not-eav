@@ -85,6 +85,7 @@ class Attribute(models.Model):
         if hasattr(model_class._meta, '_field_cache'):
             del model_class._meta._field_cache
 
+
 def create_attribute(sender, instance, created, **kwargs):
     from django.contrib import admin
     admin.autodiscover()
