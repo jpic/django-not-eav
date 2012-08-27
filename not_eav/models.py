@@ -77,7 +77,8 @@ class Attribute(models.Model):
         model_class._meta.fields[:] = [
             x for x in model_class._meta.fields if x.name != self.name]
 
-        del model_class._meta._field_cache
+        if hasattr(model_class._meta, '_field_cache'):
+            del model_class._meta._field_cache
 
 def create_attribute(sender, instance, created, **kwargs):
     from django.contrib import admin
