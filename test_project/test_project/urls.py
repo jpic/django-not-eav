@@ -1,10 +1,10 @@
 from django.conf.urls import patterns, include, url
 
+import not_eav
+not_eav.autodiscover()
+
 import autocomplete_light
 autocomplete_light.autodiscover()
-
-# project-specific overrides
-import autocomplete_light_registry
 
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin

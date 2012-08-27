@@ -13,7 +13,7 @@ class Author(models.Model):
 
 class Book(models.Model):
     name = models.CharField(max_length=100)
-    publisher = models.ForeignKey('Publisher')
+    publisher = models.ForeignKey('Publisher', blank=True, null=True)
     authors = models.ManyToManyField('Author', blank=True)
 
     @classmethod

@@ -53,6 +53,7 @@ setup(
     keywords='django eav',
     install_requires=[
         'django',
+        'south',
     ],
     cmdclass={'test': RunTests},
     classifiers=[
