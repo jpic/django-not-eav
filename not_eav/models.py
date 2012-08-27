@@ -92,9 +92,9 @@ signals.post_save.connect(create_attribute, sender=Attribute)
 
 
 def delete_attribute(sender, instance, **kwargs):
-    from django.contrib import admin
-    admin.autodiscover()
-
     instance.remove_from_class()
     instance.delete_column()
+
+    from django.contrib import admin
+    admin.autodiscover()
 signals.pre_delete.connect(delete_attribute, sender=Attribute)
