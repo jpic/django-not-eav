@@ -20,6 +20,15 @@ add the model fields to the model class dynamically.
 You can add or remove fields in the admin, but you may not change a field name
 or type.
 
+The advantage of this pattern over classic eav `heavy solutions
+<https://bitbucket.org/neithere/eav-django/src/tip/eav/models.py>`_ is that
+dynamic fields can be treated like regular fields.
+
+The inconvenient is that it gives the website administrator the opportunity to
+mess up with his database - althought django-not-eav tries to prevent that. On
+the other hand, it is great if you're trying to market users of products like
+FileMaker.
+
 Requirements
 ------------
 
