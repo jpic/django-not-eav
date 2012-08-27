@@ -41,7 +41,7 @@ class RunTests(Command):
 setup(
     name='django-not-eav',
     version='0.0.0',
-    description='The best app to f**k up your models',
+    description='Dynamic attributes for django models.',
     author='James Pic',
     author_email='jamespic@gmail.com',
     url='https://github.com/yourlabs/django-not-eav',
