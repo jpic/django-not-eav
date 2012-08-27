@@ -44,8 +44,13 @@ class Attribute(models.Model):
 
     @property
     def field_kwargs(self):
-        kwargs = dict(null=True, blank=True, verbose_name=self.verbose_name,
-            help_text=self.help_text)
+        kwargs = dict(null=True, blank=True)
+
+        if self.verbose_name:
+            kwargs['verbose_name'] = self.verbose_name
+
+        if self.help_text:
+            kwargs['help_text'] = self.help_text
 
         if self.kind == 'django.db.models.fields.FileField':
             kwargs['upload_to'] = 'custom_filefields'
