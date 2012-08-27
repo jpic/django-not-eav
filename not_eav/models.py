@@ -69,6 +69,15 @@ class Attribute(models.Model):
         self.field_instance.contribute_to_class(
             self.content_type.model_class(), self.name)
 
+    def remove_from_class(self):
+        model_class = self.content_type.model_class()
+
+        model_class._meta.local_fields[:] = [
+            x for x in model_class._meta.local_fields if x.name != self.name]
+        model_class._meta.fields[:] = [
+            x for x in model_class._meta.fields if x.name != self.name]
+
+        del model_class._meta._field_cache
 
 def create_attribute(sender, instance, created, **kwargs):
     from django.contrib import admin
@@ -83,5 +92,9 @@ signals.post_save.connect(create_attribute, sender=Attribute)
 
 
 def delete_attribute(sender, instance, **kwargs):
+    from django.contrib import admin
+    admin.autodiscover()
+
+    instance.remove_from_class()
     instance.delete_column()
 signals.pre_delete.connect(delete_attribute, sender=Attribute)

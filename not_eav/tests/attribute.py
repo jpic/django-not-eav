@@ -18,3 +18,9 @@ class AttributeTest(TestCase):
 
         book = Book.objects.get(name=u'Breaking Django')
         self.assertEquals(book.new_charfield, 'Easy !')
+
+    def test_002_remove_new_charfield(self):
+        Attribute.objects.get(name='new_charfield').delete()
+
+        # should be removed from model class
+        self.assertRaises(TypeError, lambda: Book(new_charfield='foo'))
