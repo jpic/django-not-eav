@@ -52,8 +52,8 @@ setup(
     license='MIT',
     keywords='django eav',
     install_requires=[
-        'django',
-        'south',
+        'django>=1.4',
+        'south==0.7.6',
     ],
     cmdclass={'test': RunTests},
     classifiers=[
