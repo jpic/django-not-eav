@@ -12,7 +12,7 @@ When such a model is created:
 - a model field is generated and added to the corresponding model class
   dynamically,
 - a column is created, using ``south`` API,
-- the admin is reloaded'
+- the admin is reloaded.
 
 ``not_eav.autodiscover()`` is in charge of iterating over all ``Attribute`` to
 add the model fields to the model class dynamically.
