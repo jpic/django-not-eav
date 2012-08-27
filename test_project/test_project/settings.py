@@ -131,7 +131,6 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'south',
     'autocomplete_light',
-    'genericm2m',
     'book',
     # Uncomment the next line to enable the admin:
     'django.contrib.admin',
