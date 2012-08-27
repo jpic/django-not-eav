@@ -1,1 +1,2 @@
+django-not-eav
 django-autocomplete-light
