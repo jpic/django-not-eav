@@ -7,7 +7,7 @@ When things go wrong
 --------------------
 
 If you need help, open an issue on the `github issues page
-<https://github.com/yourlabs/django-autocomplete-light/issues>`_.
+<https://github.com/yourlabs/django-not-eav/issues>`_.
 
 But make sure you've read `how to report bugs effectively
 <http://www.chiark.greenend.org.uk/~sgtatham/bugs.html>`_

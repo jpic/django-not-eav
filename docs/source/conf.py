@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# django-autocomplete-light documentation build configuration file, created by
+# django-not-eav documentation build configuration file, created by
 # sphinx-quickstart2 on Tue May  8 17:10:44 2012.
 #
 # This file is execfile()d with the current directory set to its containing dir.
@@ -58,7 +58,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'django-autocomplete-light'
+project = u'django-not-eav'
 copyright = u'2012, James Pic'
 
 # The version info for the project you're documenting, acts as replacement for
@@ -182,7 +182,7 @@ html_static_path = ['_static']
 #html_file_suffix = None
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'django-autocomplete-lightdoc'
+htmlhelp_basename = 'django-not-eavdoc'
 
 
 # -- Options for LaTeX output --------------------------------------------------
@@ -201,7 +201,7 @@ latex_elements = {
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
-  ('index', 'django-autocomplete-light.tex', u'django-autocomplete-light Documentation',
+  ('index', 'django-not-eav.tex', u'django-not-eav Documentation',
    u'James Pic', 'manual'),
 ]
 
@@ -231,7 +231,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    ('index', 'django-autocomplete-light', u'django-autocomplete-light Documentation',
+    ('index', 'django-not-eav', u'django-not-eav Documentation',
      [u'James Pic'], 1)
 ]
 
@@ -245,8 +245,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-  ('index', 'django-autocomplete-light', u'django-autocomplete-light Documentation',
-   u'James Pic', 'django-autocomplete-light', 'One line description of project.',
+  ('index', 'django-not-eav', u'django-not-eav Documentation',
+   u'James Pic', 'django-not-eav', 'One line description of project.',
    'Miscellaneous'),
 ]
 

@@ -77,17 +77,17 @@ qthelp:
 	@echo
 	@echo "Build finished; now you can run "qcollectiongenerator" with the" \
 	      ".qhcp project file in $(BUILDDIR)/qthelp, like this:"
-	@echo "# qcollectiongenerator $(BUILDDIR)/qthelp/django-autocomplete-light.qhcp"
+	@echo "# qcollectiongenerator $(BUILDDIR)/qthelp/django-not-eav.qhcp"
 	@echo "To view the help file:"
-	@echo "# assistant -collectionFile $(BUILDDIR)/qthelp/django-autocomplete-light.qhc"
+	@echo "# assistant -collectionFile $(BUILDDIR)/qthelp/django-not-eav.qhc"
 
 devhelp:
 	$(SPHINXBUILD) -b devhelp $(ALLSPHINXOPTS) $(BUILDDIR)/devhelp
 	@echo
 	@echo "Build finished."
 	@echo "To view the help file:"
-	@echo "# mkdir -p $$HOME/.local/share/devhelp/django-autocomplete-light"
-	@echo "# ln -s $(BUILDDIR)/devhelp $$HOME/.local/share/devhelp/django-autocomplete-light"
+	@echo "# mkdir -p $$HOME/.local/share/devhelp/django-not-eav"
+	@echo "# ln -s $(BUILDDIR)/devhelp $$HOME/.local/share/devhelp/django-not-eav"
 	@echo "# devhelp"
 
 epub:
