@@ -40,7 +40,7 @@ class RunTests(Command):
 
 setup(
     name='django-not-eav',
-    version='0.0.0',
+    version='0.0.1',
     description='Dynamic attributes for django models.',
     author='James Pic',
     author_email='jamespic@gmail.com',
