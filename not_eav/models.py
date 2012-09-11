@@ -17,8 +17,8 @@ KIND_CHOICES = (
     ('django.db.models.fields.DateTimeField', _('date and time')),
     ('django.db.models.fields.DateField', _('date only')),
     ('django.db.models.fields.TimeField', _('time only')),
-    ('django.db.models.fields.ImageField', _('image')),
-    ('django.db.models.fields.FileField', _('file')),
+    ('django.db.models.fields.files.ImageField', _('image')),
+    ('django.db.models.fields.files.FileField', _('file')),
 )
 
 
