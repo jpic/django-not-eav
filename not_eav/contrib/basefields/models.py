@@ -42,6 +42,21 @@ class DateTimeFieldModel(BaseFieldModel):
 class DecimalFieldModel(BaseFieldModel):
     module_class = 'django.db.models.fields.DecimalField'
 
+    max_digits = models.PositiveIntegerField(
+        help_text=_(u'The maximum number of digits allowed in the number.'
+            'Note that this number must be greater than or equal to decimal_places, if it exists.'))
+    max_digits.not_changeable = True
+
+    decimal_places = models.PositiveIntegerField(
+        help_text=_(u'The number of decimal places to store with the number.'))
+    decimal_places.not_changeable = True
+
+    def field_kwargs(self):
+        kwargs = super(DecimalFieldModel, self).field_kwargs()
+        kwargs['max_digits'] = self.max_digits
+        kwargs['decimal_places'] = self.decimal_places
+        return kwargs
+
     class Meta:
         verbose_name = _(u'Decimal number field')
 
