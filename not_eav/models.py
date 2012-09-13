@@ -11,18 +11,6 @@ from south.v2 import SchemaMigration
 
 from fields import NameField
 
-KIND_CHOICES = (
-    ('django.db.models.fields.IntegerField', _('integer')),
-    ('django.db.models.fields.FloatField', _('decimal number')),
-    ('django.db.models.fields.CharField', _('short text')),
-    ('django.db.models.fields.TextField', _('text')),
-    ('django.db.models.fields.DateTimeField', _('date and time')),
-    ('django.db.models.fields.DateField', _('date only')),
-    ('django.db.models.fields.TimeField', _('time only')),
-    ('django.db.models.fields.files.ImageField', _('image')),
-    ('django.db.models.fields.files.FileField', _('file')),
-)
-
 
 class BaseFieldModel(models.Model):
     content_type = models.ForeignKey(ContentType)
