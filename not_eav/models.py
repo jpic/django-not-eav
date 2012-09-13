@@ -30,6 +30,7 @@ class Attribute(models.Model):
 
     verbose_name = models.CharField(max_length=100, null=True, blank=True)
     help_text = models.TextField(blank=True)
+    required = models.BooleanField(default=False)
     kind = models.CharField(max_length=70, choices=KIND_CHOICES)
 
     @classmethod
@@ -46,7 +47,11 @@ class Attribute(models.Model):
 
     @property
     def field_kwargs(self):
-        kwargs = dict(null=True, blank=True)
+        kwargs = {}
+        if self.required:
+            kwargs['null'] = kwargs['blank'] = False
+        else:
+            kwargs['null'] = kwargs['blank'] = True
 
         if self.verbose_name:
             kwargs['verbose_name'] = self.verbose_name
