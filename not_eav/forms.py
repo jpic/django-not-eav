@@ -3,15 +3,7 @@ from django import forms
 from models import Attribute
 
 
-class AttributeFormBase(forms.ModelForm):
-    class Meta:
-        model = Attribute
-
-
-class AttributeCreateForm(AttributeFormBase):
-    pass
-
-
-class AttributeEditForm(AttributeFormBase):
+class AttributeEditForm(forms.ModelForm):
     class Meta:
         exclude = ('content_type', 'name', 'kind')
+        model = Attribute

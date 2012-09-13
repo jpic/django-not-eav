@@ -1,6 +1,7 @@
 from django.test import TestCase
+from django.forms.models import modelform_factory
 
-from not_eav.forms import AttributeFormBase
+from ..models import Attribute
 
 
 class AttributeFormBaseTest(TestCase):
@@ -16,6 +17,6 @@ class AttributeFormBaseTest(TestCase):
 
     def test_001_name_validation(self):
         for test in self.name_validation_provider():
-            form = AttributeFormBase(dict(name=test[0],
+            form = modelform_factory(Attribute)(dict(name=test[0],
                 content_type=1, kind='django.db.models.fields.TextField'))
             self.assertEquals(form.is_valid(), test[1])
