@@ -55,6 +55,7 @@ setup(
         'django==1.4',
         'south==0.7.6',
         'django-model-utils==1.1.0',
+        'unittest-data-provider',
     ],
     cmdclass={'test': RunTests},
     classifiers=[
