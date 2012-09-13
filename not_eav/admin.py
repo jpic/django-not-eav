@@ -1,17 +1,24 @@
 from django.contrib import admin
 
-from forms import AttributeEditForm
-from models import Attribute
+from forms import BaseFieldModelEditForm
+from models import BaseFieldModel
 
 
-class AttributeAdmin(admin.ModelAdmin):
-    list_filter = ('content_type', 'kind')
-    list_display = ('content_type', 'name', 'kind', 'verbose_name')
+class BaseFieldModelAdmin(admin.ModelAdmin):
+    list_filter = ('content_type',)
+    list_display = ('content_type', 'name', 'verbose_name')
 
     def get_readonly_fields(self, request, obj=None):
         if obj is not None:
-            return AttributeEditForm.Meta.exclude
-        else:
-            return []
+            exclude = list(BaseFieldModelEditForm.Meta.exclude)
 
-admin.site.register(Attribute, AttributeAdmin)
+            for field in obj._meta.fields:
+                not_changeable = getattr(field, 'not_changeable', False)
+                if not_changeable:
+                    exclude.append(field.name)
+        else:
+            exclude = []
+
+        return exclude
+
+admin.site.register(BaseFieldModel, BaseFieldModelAdmin)

@@ -1,5 +1,5 @@
 def autodiscover():
-    from models import Attribute
+    from models import BaseFieldModel
 
-    for attribute in Attribute.objects.all():
-        attribute.contribute_to_class()
+    for field in BaseFieldModel.objects.select_subclasses():
+        field.contribute_to_class()

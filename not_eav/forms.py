@@ -1,9 +1,9 @@
 from django import forms
 
-from models import Attribute
+from models import BaseFieldModel
 
 
-class AttributeEditForm(forms.ModelForm):
+class BaseFieldModelEditForm(forms.ModelForm):
     class Meta:
-        exclude = ('content_type', 'name', 'kind')
-        model = Attribute
+        exclude = ('content_type', 'name', 'required')
+        model = BaseFieldModel
