@@ -8,6 +8,8 @@ from django.contrib.contenttypes.models import ContentType
 from south.db import db
 from south.v2 import SchemaMigration
 
+from fields import NameField
+
 
 KIND_CHOICES = (
     ('django.db.models.fields.IntegerField', _('integer')),
@@ -24,7 +26,7 @@ KIND_CHOICES = (
 
 class Attribute(models.Model):
     content_type = models.ForeignKey(ContentType)
-    name = models.CharField(max_length=100)
+    name = NameField(max_length=200)
 
     verbose_name = models.CharField(max_length=100, null=True, blank=True)
     help_text = models.TextField(blank=True)
