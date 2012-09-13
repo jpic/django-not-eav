@@ -60,9 +60,8 @@ class BaseFieldModel(models.Model):
         return kwargs
 
     def create_column(self):
-        sm = SchemaMigration()
         db.add_column(self.content_type.model_class()._meta.db_table,
-            self.name, sm.gf(str(self.module_class))(**self.field_kwargs()))
+            self.name, self.field_instance())
 
     def delete_column(self):
         db.delete_column(self.content_type.model_class()._meta.db_table,
