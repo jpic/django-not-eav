@@ -27,11 +27,13 @@ class BaseFieldModel(models.Model):
     class Meta:
         app_label = 'not_eav'
 
-    def field_instance(self):
+    def field_class(self):
         bits = self.module_class.split('.')
         module = importlib.import_module('.'.join(bits[:-1]))
-        field_class = getattr(module, bits[-1])
-        return field_class(**self.field_kwargs())
+        return getattr(module, bits[-1])
+
+    def field_instance(self):
+        return self.field_class()(**self.field_kwargs())
 
     def field_kwargs(self):
         kwargs = {}
