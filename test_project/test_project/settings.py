@@ -136,6 +136,7 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     'not_eav',
     'not_eav.contrib.basefields',
+    'not_eav.contrib.relationfields',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
 )
